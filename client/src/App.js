@@ -6,6 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import DocumentTitle from "react-document-title";
 import NavBar from "./components/NavBar";
 import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register"
 
 
 export default class App extends Component {
@@ -18,8 +19,8 @@ export default class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
-              <Route path="*" component={NoMatch} />
-            
+              <Route path="/register" component={Register}/>
+              <Route path="*" component={NoMatch} /> 
             </Switch>
           </div>
         </Router>

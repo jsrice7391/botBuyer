@@ -35,7 +35,9 @@ export default class NavBar extends Component {
                   <Link to="/login">
                     <MenuItem primaryText="Login" />
                   </Link>
-                  <MenuItem primaryText="More Info" />
+                  <Link to="/register">
+                    <MenuItem primaryText="Register" />
+                  </Link>
                 </IconMenu>
               </ToolbarGroup>
             </Toolbar>
