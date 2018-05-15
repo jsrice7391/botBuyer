@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt-nodejs");
 
 
-const Userschema = new Schema({
+const UserSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -18,7 +18,7 @@ const Userschema = new Schema({
     }
 });
 
-Userschema.pre("save", next => {
+UserSchema.pre("save", next => {
     var user = this;
     // Checks to see if the password has been changed or is it new
     if (this.isModified('password') || this.isNew) {

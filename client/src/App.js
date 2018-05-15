@@ -7,6 +7,7 @@ import DocumentTitle from "react-document-title";
 import NavBar from "./components/NavBar";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register"
+import Dashboard from "./pages/Dashboard";
 
 
 export default class App extends Component {
@@ -20,6 +21,7 @@ export default class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register}/>
+              <Route path="/dashboard" component={Dashboard}/>
               <Route path="*" component={NoMatch} /> 
             </Switch>
           </div>
