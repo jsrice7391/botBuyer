@@ -16,6 +16,14 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
+
+var engines = require('consolidate');
+
+app.set('views', __dirname + '/client');
+app.engine('html', engines.mustache);
+app.set('view engine', 'html');
+
+
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
