@@ -9,7 +9,7 @@
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
-    "test": "mocha test/ --reporter nyan",
+    "test": "mocha --recursive test/ --reporter nyan",
     "installDeps": "yarn && cd client && yarn"
   },
   "author": "Justin Rice",
