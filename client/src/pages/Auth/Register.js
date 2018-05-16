@@ -24,7 +24,7 @@ class Register extends Component {
 
     const { username, password } = this.state;
 
-    axios.post('/api/auth/register', { username, password })
+    axios.post('/auth/register', { username, password })
       .then((result) => {
         this.props.history.push("/login")
       });

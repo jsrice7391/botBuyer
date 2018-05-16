@@ -4,11 +4,7 @@ const bcrypt = require("bcrypt-nodejs");
 
 
 const UserSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
+    username: {
         type: String,
         required: true
     },
@@ -18,11 +14,10 @@ const UserSchema = new Schema({
     }
 });
 
-UserSchema.pre("save", next => {
+
+UserSchema.pre('save', function (next) {
     var user = this;
-    // Checks to see if the password has been changed or is it new
     if (this.isModified('password') || this.isNew) {
-        // bCrype creates the hash
         bcrypt.genSalt(10, function (err, salt) {
             if (err) {
                 return next(err);
@@ -41,6 +36,7 @@ UserSchema.pre("save", next => {
 });
 
 
+
 // Allows B-Crypt to compare the password
 UserSchema.methods.comparePassword = function (passw, cb) {
     bcrypt.compare(passw, this.password, function (err, isMatch) {
@@ -51,4 +47,6 @@ UserSchema.methods.comparePassword = function (passw, cb) {
     });
 };
 
-module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model("User", UserSchema);
+
+module.exports = User;
