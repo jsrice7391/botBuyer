@@ -25,7 +25,7 @@ npm manifest:
       "start": "concurrently \"nodemon server.js\" \"npm run client\"",
       "build": "node scripts/build.js",
       "seed": "node scripts/seedDB.js",
-      "test": "mocha test",
+      "test": "mocha --reporter nyan --exit",
       "installDeps": "yarn && cd client && yarn"
     },
     "author": "Justin Rice",
@@ -40,6 +40,7 @@ npm manifest:
     "dependencies": {
       "axios": "^0.16.2",
       "bcrypt-nodejs": "^0.0.3",
+      "bluebird": "^3.5.1",
       "body-parser": "^1.17.2",
       "consolidate": "^0.15.1",
       "cypress": "^2.1.0",
@@ -48,7 +49,8 @@ npm manifest:
       "mongoose": "^4.11.7",
       "morgan": "^1.9.0",
       "passport": "^0.4.0",
-      "passport-jwt": "^4.0.0"
+      "passport-jwt": "^4.0.0",
+      "validator": "^10.2.0"
     }
   }
 
@@ -335,7 +337,7 @@ Lockfile:
     version "3.5.0"
     resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
   
-  bluebird@^3.1.1:
+  bluebird@^3.1.1, bluebird@^3.5.1:
     version "3.5.1"
     resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
   
@@ -3067,6 +3069,10 @@ Lockfile:
     version "3.2.1"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
   
+  validator@^10.2.0:
+    version "10.2.0"
+    resolved "https://registry.yarnpkg.com/validator/-/validator-10.2.0.tgz#61d6b10c3d5c9f368c75c2ce8ca2b792522eaafa"
+  
   vary@~1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -3138,7 +3144,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c mocha test
+  Arguments: -c mocha --reporter nyan --exit
   Directory: /Users/justinrice/Documents/WebProjects/buyBot
   Output:
   
