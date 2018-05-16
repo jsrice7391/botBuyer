@@ -23,7 +23,7 @@ module.exports = {
         },
     signInUser: (req, res) => {
         console.log("In the user name route")
-        User.findOne({
+        db.User.findOne({
             username: req.body.username
         }, function (err, user) {
             if (err) throw err;
